@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="1" parallel="methods" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="1" parallel="methods" name="Test-Runner=1(failed)">
+    <classes>
+      <class name="com.testng.CorporateTest">
+        <methods>
+          <include name="addCorporate_1_Test"/>
+          <include name="deleteCorporate_2_Test"/>
+          <include name="config_AM"/>
+          <include name="config_AS"/>
+          <include name="config_AC"/>
+          <include name="config_BM"/>
+          <include name="config_BS"/>
+          <include name="config_BC"/>
+        </methods>
+      </class> <!-- com.testng.CorporateTest -->
+      <class name="com.testng.AdminTest">
+        <methods>
+          <include name="deleteAdmin_2_Test"/>
+          <include name="addAdmin_1_Test"/>
+          <include name="config_AM"/>
+          <include name="config_AS"/>
+          <include name="config_AC"/>
+          <include name="config_BM"/>
+          <include name="config_BS"/>
+          <include name="config_BC"/>
+        </methods>
+      </class> <!-- com.testng.AdminTest -->
+    </classes>
+  </test> <!-- Test-Runner=1(failed) -->
+</suite> <!-- Failed suite [Suite] -->

@@ -1,0 +1,6 @@
+{
+	"browser" : "chrome",
+	"url" : "http://localhost8080",
+	"emailId" : "admin",
+	"password" : "admin"
+}

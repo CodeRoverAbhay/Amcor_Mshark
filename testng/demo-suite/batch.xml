@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test name="Test" preserve-order="false">
+    <classes>
+      <class name="com.testng.AdminTest"/>
+      <class name="com.testng.EmployeeTest"/>
+      <class name="com.testng.CorporateTest"/>
+      <class name="com.testng.BranchTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
