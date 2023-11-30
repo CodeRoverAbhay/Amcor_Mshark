@@ -162,6 +162,47 @@
 				</pluginManagement>
 			</build>
 		</profile>
+
+	<profile>
+			<id></id>
+			<build>
+				<pluginManagement>
+					<plugins>
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-surefire-plugin</artifactId>
+							<version>3.0.0-M5</version>
+							<configuration>
+								<suiteXmlFiles>
+									<suiteXmlFile>cross-browser.xml</suiteXmlFile>
+								</suiteXmlFiles>
+							</configuration>
+						</plugin>
+					</plugins>
+				</pluginManagement>
+			</build>
+		</profile>
+
+	<profile>
+			<id>_</id>
+			<build>
+				<pluginManagement>
+					<plugins>
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-surefire-plugin</artifactId>
+							<version>3.0.0-M5</version>
+							<configuration>
+								<suiteXmlFiles>
+									<suiteXmlFile>parallel.xml</suiteXmlFile>
+								</suiteXmlFiles>
+							</configuration>
+						</plugin>
+					</plugins>
+				</pluginManagement>
+			</build>
+		</profile>
+
 	</profiles>
 
 </project>
