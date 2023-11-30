@@ -6,7 +6,7 @@
     <classes>
       <class name="com.admin.AddEmployee_TC_01_test"/>
       <class name="com.hrofficer.HrOfficerLogin_TC_02_test"/>
-      <class name="com.admin.AddEmployeeHRH_Count_Employee_KPI_FromHRO_TC_54_test"/>
+      <class name="com.admin.AddEmployeeHRH_Check_Employee_FromHRO_TC_54_test"/>
       <class name="com.hrofficer.DeleteEmployee_FromHRO_Check_Employee_KPI_TC_09_test"/>
       <class name="com.hrassistant.EditEmployee_FromHRA_CheckFromHRH_TC_24_test"/>
       <class name="com.admin.CreateHRHead_DowngradeTo_HROfficer_AddEmployee_TC_31_test"/>

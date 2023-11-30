@@ -5,56 +5,48 @@
       <![CDATA[[ Test script execution starts from here. ]]]>
     </line>
     <line>
-      <![CDATA[tc_34_test [ Test script executed successfully. ]]]>
+      <![CDATA[tc_02_test [ Test script executed successfully. ]]]>
     </line>
   </reporter-output>
-  <suite started-at="2023-11-30T15:58:48 IST" name="Default suite" finished-at="2023-11-30T15:59:20 IST" duration-ms="32626">
+  <suite started-at="2023-11-30T17:28:49 IST" name="group-smoke" finished-at="2023-11-30T17:29:03 IST" duration-ms="13981">
     <groups>
-      <group name="system">
-        <method signature="CreateHRAssistant_DeleteHRA_AgainLogin_TC_34_test.tc_34_test()[pri:0, instance:com.admin.CreateHRAssistant_DeleteHRA_AgainLogin_TC_34_test@28eaa59a]" name="tc_34_test" class="com.admin.CreateHRAssistant_DeleteHRA_AgainLogin_TC_34_test"/>
-      </group> <!-- system -->
+      <group name="smoke">
+        <method signature="HrOfficerLogin_TC_02_test.tc_02_test()[pri:0, instance:com.hrofficer.HrOfficerLogin_TC_02_test@c33b74f]" name="tc_02_test" class="com.hrofficer.HrOfficerLogin_TC_02_test"/>
+      </group> <!-- smoke -->
     </groups>
-    <test started-at="2023-11-30T15:58:48 IST" name="Default test" finished-at="2023-11-30T15:59:20 IST" duration-ms="32626">
-      <class name="com.admin.CreateHRAssistant_DeleteHRA_AgainLogin_TC_34_test">
-        <test-method is-config="true" signature="config_BS()[pri:0, instance:com.admin.CreateHRAssistant_DeleteHRA_AgainLogin_TC_34_test@28eaa59a]" started-at="2023-11-30T15:58:47 IST" name="config_BS" finished-at="2023-11-30T15:58:48 IST" duration-ms="503" status="PASS">
+    <test started-at="2023-11-30T17:28:49 IST" name="Test" finished-at="2023-11-30T17:29:03 IST" duration-ms="13981">
+      <class name="com.hrofficer.HrOfficerLogin_TC_02_test">
+        <test-method is-config="true" signature="config_BS()[pri:0, instance:com.hrofficer.HrOfficerLogin_TC_02_test@c33b74f]" started-at="2023-11-30T17:28:48 IST" name="config_BS" finished-at="2023-11-30T17:28:49 IST" duration-ms="421" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- config_BS -->
-        <test-method is-config="true" signature="config_BT()[pri:0, instance:com.admin.CreateHRAssistant_DeleteHRA_AgainLogin_TC_34_test@28eaa59a]" started-at="2023-11-30T15:58:48 IST" name="config_BT" finished-at="2023-11-30T15:58:48 IST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- config_BT -->
-        <test-method is-config="true" signature="config_BC()[pri:0, instance:com.admin.CreateHRAssistant_DeleteHRA_AgainLogin_TC_34_test@28eaa59a]" started-at="2023-11-30T15:58:48 IST" name="config_BC" finished-at="2023-11-30T15:58:52 IST" duration-ms="3869" status="PASS">
+        <test-method is-config="true" signature="config_BC()[pri:0, instance:com.hrofficer.HrOfficerLogin_TC_02_test@c33b74f]" started-at="2023-11-30T17:28:49 IST" name="config_BC" finished-at="2023-11-30T17:28:53 IST" duration-ms="4275" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- config_BC -->
-        <test-method signature="tc_34_test()[pri:0, instance:com.admin.CreateHRAssistant_DeleteHRA_AgainLogin_TC_34_test@28eaa59a]" started-at="2023-11-30T15:58:52 IST" name="tc_34_test" finished-at="2023-11-30T15:59:19 IST" duration-ms="26788" status="PASS">
+        <test-method signature="tc_02_test()[pri:0, instance:com.hrofficer.HrOfficerLogin_TC_02_test@c33b74f]" started-at="2023-11-30T17:28:54 IST" name="tc_02_test" finished-at="2023-11-30T17:29:01 IST" duration-ms="7377" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[[ Test script execution starts from here. ]]]>
             </line>
             <line>
-              <![CDATA[tc_34_test [ Test script executed successfully. ]]]>
+              <![CDATA[tc_02_test [ Test script executed successfully. ]]]>
             </line>
           </reporter-output>
-        </test-method> <!-- tc_34_test -->
-        <test-method is-config="true" signature="config_AM()[pri:0, instance:com.admin.CreateHRAssistant_DeleteHRA_AgainLogin_TC_34_test@28eaa59a]" started-at="2023-11-30T15:59:19 IST" name="config_AM" finished-at="2023-11-30T15:59:19 IST" duration-ms="591" status="PASS">
+        </test-method> <!-- tc_02_test -->
+        <test-method is-config="true" signature="config_AM()[pri:0, instance:com.hrofficer.HrOfficerLogin_TC_02_test@c33b74f]" started-at="2023-11-30T17:29:01 IST" name="config_AM" finished-at="2023-11-30T17:29:02 IST" duration-ms="713" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- config_AM -->
-        <test-method is-config="true" signature="config_AC()[pri:0, instance:com.admin.CreateHRAssistant_DeleteHRA_AgainLogin_TC_34_test@28eaa59a]" started-at="2023-11-30T15:59:19 IST" name="config_AC" finished-at="2023-11-30T15:59:20 IST" duration-ms="826" status="PASS">
+        <test-method is-config="true" signature="config_AC()[pri:0, instance:com.hrofficer.HrOfficerLogin_TC_02_test@c33b74f]" started-at="2023-11-30T17:29:02 IST" name="config_AC" finished-at="2023-11-30T17:29:03 IST" duration-ms="995" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- config_AC -->
-        <test-method is-config="true" signature="config_AT()[pri:0, instance:com.admin.CreateHRAssistant_DeleteHRA_AgainLogin_TC_34_test@28eaa59a]" started-at="2023-11-30T15:59:20 IST" name="config_AT" finished-at="2023-11-30T15:59:20 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- config_AT -->
-        <test-method is-config="true" signature="config_AS()[pri:0, instance:com.admin.CreateHRAssistant_DeleteHRA_AgainLogin_TC_34_test@28eaa59a]" started-at="2023-11-30T15:59:21 IST" name="config_AS" finished-at="2023-11-30T15:59:21 IST" duration-ms="16" status="PASS">
+        <test-method is-config="true" signature="config_AS()[pri:0, instance:com.hrofficer.HrOfficerLogin_TC_02_test@c33b74f]" started-at="2023-11-30T17:29:04 IST" name="config_AS" finished-at="2023-11-30T17:29:04 IST" duration-ms="19" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- config_AS -->
-      </class> <!-- com.admin.CreateHRAssistant_DeleteHRA_AgainLogin_TC_34_test -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- com.hrofficer.HrOfficerLogin_TC_02_test -->
+    </test> <!-- Test -->
+  </suite> <!-- group-smoke -->
 </testng-results>

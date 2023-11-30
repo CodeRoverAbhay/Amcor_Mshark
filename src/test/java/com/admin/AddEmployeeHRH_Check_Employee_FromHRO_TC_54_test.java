@@ -14,11 +14,12 @@ import com.hrm.objectRepo.LoginPage;
 
 @Listeners(com.hrm.genericutils.ListenerImplementationClass.class)
 
-// E2E [ Create employee as HR Head and check the existance of the same employee as HR Officer ]  --> TestScript dependent on TC_01
+//E2E [ Create employee as HR Head and check the existance of the same employee as HR Officer ]  --> TestScript dependent on TC_01
 
 public class AddEmployeeHRH_Check_Employee_FromHRO_TC_54_test extends BaseClass {
+
 	@Test(groups = "system", retryAnalyzer = com.hrm.genericutils.RetryImplementationClass.class)
-	
+
 	public void tc_54_test() throws IOException {
 		// Read common data from Properties file
 		String url = puObj.readDataFromPropertiesFile("url");
@@ -89,7 +90,8 @@ public class AddEmployeeHRH_Check_Employee_FromHRO_TC_54_test extends BaseClass 
 		// verify the user and Go to Employee page
 		hp.verifyUser(hrOfficerUserEmail);
 		hp.navigateToAddEmployee();
-		// Search for Employee who has been previously added by HR Head & verify Employee is visible to HR Officer or not
+		// Search for Employee who has been previously added by HR Head & verify
+		// Employee is visible to HR Officer or not
 		String expEmployeeId = euObj.readExcelData("TC_54", 2, 16);
 		ep.getSearchTextfield().sendKeys(expEmployeeId);
 		String actEmployeeId = ep.getEmployeeIdValue();

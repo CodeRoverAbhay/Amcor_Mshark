@@ -12,7 +12,7 @@
     <classes>
       <class name="com.hrofficer.HrOfficerLogin_TC_02_test"/>
       <class name="com.admin.CreateHRAssistant_DeleteHRA_AgainLogin_TC_34_test"/>
-      <class name="com.admin.AddEmployeeHRH_Count_Employee_KPI_FromHRO_TC_54_test"/>
+      <class name="com.admin.AddEmployeeHRH_Check_Employee_FromHRO_TC_54_test"/>
       <class name="com.hrassistant.EditEmployee_FromHRA_CheckFromHRH_TC_24_test"/>
     </classes>
   </test> <!-- Test -->
