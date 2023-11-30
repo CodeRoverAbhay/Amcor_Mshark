@@ -1,109 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="1" total="7" passed="6" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
+    <line>
+      <![CDATA[[ Test script execution starts from here. ]]]>
+    </line>
+    <line>
+      <![CDATA[tc_34_test [ Test script executed successfully. ]]]>
+    </line>
   </reporter-output>
-  <suite started-at="2023-11-27T12:28:40 IST" name="Default suite" finished-at="2023-11-27T12:28:43 IST" duration-ms="2785">
+  <suite started-at="2023-11-30T15:58:48 IST" name="Default suite" finished-at="2023-11-30T15:59:20 IST" duration-ms="32626">
     <groups>
+      <group name="system">
+        <method signature="CreateHRAssistant_DeleteHRA_AgainLogin_TC_34_test.tc_34_test()[pri:0, instance:com.admin.CreateHRAssistant_DeleteHRA_AgainLogin_TC_34_test@28eaa59a]" name="tc_34_test" class="com.admin.CreateHRAssistant_DeleteHRA_AgainLogin_TC_34_test"/>
+      </group> <!-- system -->
     </groups>
-    <test started-at="2023-11-27T12:28:40 IST" name="Default test" finished-at="2023-11-27T12:28:43 IST" duration-ms="2785">
-      <class name="com.testng.DataProviderTest">
-        <test-method signature="getDataFromExcel(java.lang.String, java.lang.String)[pri:0, instance:com.testng.DataProviderTest@5bd03f44]" started-at="2023-11-27T12:28:43 IST" name="getDataFromExcel" data-provider="excelData" finished-at="2023-11-27T12:28:43 IST" duration-ms="20" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Location]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Company Name]]>
-              </value>
-            </param>
-          </params>
+    <test started-at="2023-11-30T15:58:48 IST" name="Default test" finished-at="2023-11-30T15:59:20 IST" duration-ms="32626">
+      <class name="com.admin.CreateHRAssistant_DeleteHRA_AgainLogin_TC_34_test">
+        <test-method is-config="true" signature="config_BS()[pri:0, instance:com.admin.CreateHRAssistant_DeleteHRA_AgainLogin_TC_34_test@28eaa59a]" started-at="2023-11-30T15:58:47 IST" name="config_BS" finished-at="2023-11-30T15:58:48 IST" duration-ms="503" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getDataFromExcel -->
-        <test-method signature="getDataFromExcel(java.lang.String, java.lang.String)[pri:0, instance:com.testng.DataProviderTest@5bd03f44]" started-at="2023-11-27T12:28:43 IST" name="getDataFromExcel" data-provider="excelData" finished-at="2023-11-27T12:28:43 IST" duration-ms="4" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Delhi]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Amcor]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- config_BS -->
+        <test-method is-config="true" signature="config_BT()[pri:0, instance:com.admin.CreateHRAssistant_DeleteHRA_AgainLogin_TC_34_test@28eaa59a]" started-at="2023-11-30T15:58:48 IST" name="config_BT" finished-at="2023-11-30T15:58:48 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getDataFromExcel -->
-        <test-method signature="getDataFromExcel(java.lang.String, java.lang.String)[pri:0, instance:com.testng.DataProviderTest@5bd03f44]" started-at="2023-11-27T12:28:43 IST" name="getDataFromExcel" data-provider="excelData" finished-at="2023-11-27T12:28:43 IST" duration-ms="24" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Mumbai]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Symbiosis]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- config_BT -->
+        <test-method is-config="true" signature="config_BC()[pri:0, instance:com.admin.CreateHRAssistant_DeleteHRA_AgainLogin_TC_34_test@28eaa59a]" started-at="2023-11-30T15:58:48 IST" name="config_BC" finished-at="2023-11-30T15:58:52 IST" duration-ms="3869" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getDataFromExcel -->
-        <test-method signature="getDataFromExcel(java.lang.String, java.lang.String)[pri:0, instance:com.testng.DataProviderTest@5bd03f44]" started-at="2023-11-27T12:28:43 IST" name="getDataFromExcel" data-provider="excelData" finished-at="2023-11-27T12:28:43 IST" duration-ms="8" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Chennai]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Ford]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- config_BC -->
+        <test-method signature="tc_34_test()[pri:0, instance:com.admin.CreateHRAssistant_DeleteHRA_AgainLogin_TC_34_test@28eaa59a]" started-at="2023-11-30T15:58:52 IST" name="tc_34_test" finished-at="2023-11-30T15:59:19 IST" duration-ms="26788" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[[ Test script execution starts from here. ]]]>
+            </line>
+            <line>
+              <![CDATA[tc_34_test [ Test script executed successfully. ]]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- tc_34_test -->
+        <test-method is-config="true" signature="config_AM()[pri:0, instance:com.admin.CreateHRAssistant_DeleteHRA_AgainLogin_TC_34_test@28eaa59a]" started-at="2023-11-30T15:59:19 IST" name="config_AM" finished-at="2023-11-30T15:59:19 IST" duration-ms="591" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getDataFromExcel -->
-        <test-method signature="getDataFromExcel(java.lang.String, java.lang.String)[pri:0, instance:com.testng.DataProviderTest@5bd03f44]" started-at="2023-11-27T12:28:43 IST" name="getDataFromExcel" data-provider="excelData" finished-at="2023-11-27T12:28:43 IST" duration-ms="12" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Kolkata]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[ITC]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- config_AM -->
+        <test-method is-config="true" signature="config_AC()[pri:0, instance:com.admin.CreateHRAssistant_DeleteHRA_AgainLogin_TC_34_test@28eaa59a]" started-at="2023-11-30T15:59:19 IST" name="config_AC" finished-at="2023-11-30T15:59:20 IST" duration-ms="826" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getDataFromExcel -->
-        <test-method signature="getDataFromExcel(java.lang.String, java.lang.String)[pri:0, instance:com.testng.DataProviderTest@5bd03f44]" started-at="2023-11-27T12:28:43 IST" name="getDataFromExcel" data-provider="excelData" finished-at="2023-11-27T12:28:43 IST" duration-ms="6" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Ranchi]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Mecon]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- config_AC -->
+        <test-method is-config="true" signature="config_AT()[pri:0, instance:com.admin.CreateHRAssistant_DeleteHRA_AgainLogin_TC_34_test@28eaa59a]" started-at="2023-11-30T15:59:20 IST" name="config_AT" finished-at="2023-11-30T15:59:20 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getDataFromExcel -->
-      </class> <!-- com.testng.DataProviderTest -->
+        </test-method> <!-- config_AT -->
+        <test-method is-config="true" signature="config_AS()[pri:0, instance:com.admin.CreateHRAssistant_DeleteHRA_AgainLogin_TC_34_test@28eaa59a]" started-at="2023-11-30T15:59:21 IST" name="config_AS" finished-at="2023-11-30T15:59:21 IST" duration-ms="16" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- config_AS -->
+      </class> <!-- com.admin.CreateHRAssistant_DeleteHRA_AgainLogin_TC_34_test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

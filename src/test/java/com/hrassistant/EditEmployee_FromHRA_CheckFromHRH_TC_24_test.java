@@ -2,52 +2,32 @@ package com.hrassistant;
 
 import java.io.IOException;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import com.hrm.genericutils.ExcelUtils;
-import com.hrm.genericutils.PropertyFileUtils;
-import com.hrm.genericutils.WebDriverUtils;
+import com.hrm.genericutils.BaseClass;
 import com.hrm.objectRepo.EditEmployeePage;
 import com.hrm.objectRepo.EmployeePage;
 import com.hrm.objectRepo.HomePage;
 import com.hrm.objectRepo.LoginPage;
+
+@Listeners(com.hrm.genericutils.ListenerImplementationClass.class)
+
 // Integration [ Edit employee with HR Assintant and check the edited Employee details is reflecting in HR Head Employee list ] --> TestScript dependent on TC_01 and TC_54
-public class EditEmployee_FromHRA_CheckFromHRH_TC_24_test {
-	public static WebDriver driver;
+
+public class EditEmployee_FromHRA_CheckFromHRH_TC_24_test extends BaseClass{
 	
-	@Parameters("browser")
-	@Test(groups = "integration")
+	//@Parameters("browser")
+	@Test(groups = "integration", retryAnalyzer = com.hrm.genericutils.RetryImplementationClass.class)
 	public void tc_24_test() throws IOException {
 		// For cross browser
 		//public void tc_24_test(String browser) throws IOException {
 		
-		// Instantiate utility specific class object
-		ExcelUtils euObj = new ExcelUtils();
-		PropertyFileUtils puObj = new PropertyFileUtils();
-		WebDriverUtils wuObj = new WebDriverUtils();
 		// Retrieve common data from the Properties file
 		String url = puObj.readDataFromPropertiesFile("url");
-		String browser = puObj.readDataFromPropertiesFile("browser");
-		// Based on matched condition launch the Browser
-		if (browser.equals("chrome")) {
-			driver = new ChromeDriver();
-		} else if (browser.equals("edge")) {
-			driver = new EdgeDriver();
-		} else if (browser.equals("firefox")) {
-			driver = new FirefoxDriver();
-		}
-		// Maximize the Browser screen
-		wuObj.maximizeBrowser(driver);
 		// Trigger the URL
 		driver.get(url);
-		// Add implicit wait for WebElements
-		wuObj.waitForAllElementsToLoad(driver);
 		// Login to the Application as HR Assistant (using existing HR Assistant credentials)
 		String hrAssistantUserEmail = euObj.readExcelData("TC_24", 3, 1);
 		String hrAssistantPassword = euObj.readExcelData("TC_24", 4, 1);
@@ -103,9 +83,12 @@ public class EditEmployee_FromHRA_CheckFromHRH_TC_24_test {
 		// Verify the Alert message using Assert and Accept the Alert
 		expectedPopupMessage = euObj.readExcelData("TC_24", 3, 10);
 		wuObj.acceptAlertWithAssert(driver, expectedPopupMessage);
-		// Minimize the Browser screen
-		wuObj.minimizeBrowser(driver);
-		// Terminate the session
-		driver.quit();
+		// Read common data from Properties file
+		String userEmail = puObj.readDataFromPropertiesFile("userEmail");
+		String password = puObj.readDataFromPropertiesFile("password");
+		// Login to the Application
+		lp.hrHeadLogin(userEmail, password);
+		// Print the Alert pop message and Accept the Alert
+		wuObj.printAlertMessageAndAcceptAlert(driver);
 	}
 }

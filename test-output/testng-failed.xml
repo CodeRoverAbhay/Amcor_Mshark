@@ -3,19 +3,18 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.admin.AddEmployee_TC_01_test">
+      <class name="com.hrassistant.EditEmployee_FromHRA_CheckFromHRH_TC_24_test">
         <methods>
+          <include name="tc_24_test"/>
           <include name="config_AT"/>
-          <include name="tc_01_test"/>
           <include name="config_AM"/>
           <include name="config_AS"/>
           <include name="config_BT"/>
           <include name="config_AC"/>
-          <include name="config_BM"/>
           <include name="config_BS"/>
           <include name="config_BC"/>
         </methods>
-      </class> <!-- com.admin.AddEmployee_TC_01_test -->
+      </class> <!-- com.hrassistant.EditEmployee_FromHRA_CheckFromHRH_TC_24_test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

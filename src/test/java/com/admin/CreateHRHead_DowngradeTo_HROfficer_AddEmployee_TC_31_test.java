@@ -14,13 +14,27 @@ import com.hrm.objectRepo.EditEmployeePage;
 import com.hrm.objectRepo.EmployeePage;
 import com.hrm.objectRepo.HomePage;
 import com.hrm.objectRepo.LoginPage;
+
 @Listeners(com.hrm.genericutils.ListenerImplementationClass.class)
+
 //E2E [ Create HR Head and login it, then create an employee and logout from HR Head again try to login as HR Officer and update created employee ] --> TestScript dependent on TC_01
-public class CreateHRHead_DowngradeTo_HROfficer_AddEmployee_TC_31 extends BaseClass {
-	@Test(groups = "system")
+
+public class CreateHRHead_DowngradeTo_HROfficer_AddEmployee_TC_31_test extends BaseClass {
+	@Test (groups = "system", retryAnalyzer = com.hrm.genericutils.RetryImplementationClass.class)
 	public void tc_31_test() throws IOException {
-		// From Home page Go to Admin page
+		// Read common data from Properties file
+		String url = puObj.readDataFromPropertiesFile("url");
+		String userEmail = puObj.readDataFromPropertiesFile("userEmail");
+		String password = puObj.readDataFromPropertiesFile("password");
+		// Trigger the URL
+		driver.get(url);
+		// Login to the Application
+		LoginPage lp = new LoginPage(driver);
+		lp.hrHeadLogin(userEmail, password);
+		// Print the Alert pop message and Accept the Alert
+		wuObj.printAlertMessageAndAcceptAlert(driver);
 		HomePage hp = new HomePage(driver);
+		hp.verifyUser(userEmail);
 		hp.navigateToAddAdmin();
 		// Add New Admin to the Application with position HR Head
 		AdminPage ap = new AdminPage(driver);
@@ -55,7 +69,6 @@ public class CreateHRHead_DowngradeTo_HROfficer_AddEmployee_TC_31 extends BaseCl
 		// Login to the Application as HR Head (using previously created HR Head Admin credentials)
 		String HRHUsername = euObj.readExcelData("TC_31", 7, 1);
 		String HRHPassword = euObj.readExcelData("TC_31", 8, 1);
-		LoginPage lp = new LoginPage(driver);
 		lp.hrHeadLogin(HRHUsername, HRHPassword);
 		// Verify the Alert message using Assert and Accept the Alert
 		expectedPopupMessage = euObj.readExcelData("TC_31", 2, 17);

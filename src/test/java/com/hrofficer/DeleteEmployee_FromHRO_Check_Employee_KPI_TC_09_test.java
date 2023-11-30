@@ -3,52 +3,31 @@ package com.hrofficer;
 import java.io.IOException;
 
 import org.apache.poi.EncryptedDocumentException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import com.hrm.genericutils.ExcelUtils;
-import com.hrm.genericutils.PropertyFileUtils;
-import com.hrm.genericutils.WebDriverUtils;
+import com.hrm.genericutils.BaseClass;
 import com.hrm.objectRepo.DeleteEmployeePage;
 import com.hrm.objectRepo.EmployeePage;
 import com.hrm.objectRepo.HomePage;
 import com.hrm.objectRepo.LoginPage;
 
+@Listeners(com.hrm.genericutils.ListenerImplementationClass.class)
+
 // Integration [ Delete Employee by HR Officier and check the HR Officier dashboard Employee count ] --> TestScript dependent on TC_01 and TC_54
-public class DeleteEmployee_FromHRO_Check_Employee_KPI_TC_09_test {
-	public static WebDriver driver;
+
+public class DeleteEmployee_FromHRO_Check_Employee_KPI_TC_09_test extends BaseClass{
 	
-	@Parameters("browser")
-	@Test (groups = "integration")
+	//@Parameters("browser")
+	@Test (groups = "integration", retryAnalyzer = com.hrm.genericutils.RetryImplementationClass.class)
 	public void tc_09_test() throws EncryptedDocumentException, IOException {
 		// For cross browser
 		//public void tc_09_test(String browser) throws EncryptedDocumentException, IOException {
 		
-		// Instantiate utility specific class object
-		ExcelUtils euObj = new ExcelUtils();
-		PropertyFileUtils puObj = new PropertyFileUtils();
-		WebDriverUtils wuObj = new WebDriverUtils();
 		// Retrieve common data from Properties file
 		String url = puObj.readDataFromPropertiesFile("url");
-		String browser = puObj.readDataFromPropertiesFile("browser");
-		// Based on matched condition launch the Browser
-		if (browser.equals("chrome")) {
-			driver = new ChromeDriver();
-		} else if (browser.equals("edge")) {
-			driver = new EdgeDriver();
-		} else if (browser.equals("firefox")) {
-			driver = new FirefoxDriver();
-		}
-		// Maximize the Browser screen
-		wuObj.maximizeBrowser(driver);
 		// Trigger the URL
 		driver.get(url);
-		// Add implicit wait for WebElements
-		wuObj.waitForAllElementsToLoad(driver);
 		// Login to the Application as HR Officer (using existing HR Officer credentials)
 		String hrOfficerUserEmail = euObj.readExcelData("TC_09", 3, 1);
 		String hrOfficerPasswors = euObj.readExcelData("TC_09", 4, 1);
@@ -81,14 +60,5 @@ public class DeleteEmployee_FromHRO_Check_Employee_KPI_TC_09_test {
 		hp.naviagateToDashboardKpiTracker();
 		// Verify that upon deletion of Employee, Current count of Employee is decreasing or not
 		hp.verifyUpdatedDashboardEmployeeCountAfterDelete(initialEmployeeCount);
-		// Logout from the Application
-		hp.logOutFormApplication();
-		// Verify the Alert message using Assert and Accept the Alert
-		expectedPopupMessage = euObj.readExcelData("TC_09", 3, 7);
-		wuObj.acceptAlertWithAssert(driver, expectedPopupMessage);
-		// Maximize the Browser screen
-		wuObj.minimizeBrowser(driver);
-		// Terminate the session
-		driver.quit();
 	}
 }

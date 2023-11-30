@@ -19,14 +19,27 @@ import com.hrm.objectRepo.HomePage;
 import com.hrm.objectRepo.LoginPage;
 
 @Listeners(com.hrm.genericutils.ListenerImplementationClass.class)
+
 // E2E [ Add Corporate, Branch, HR Officer and then Add Employee from HR Officer ]
+
 public class AddEmployee_TC_01_test extends BaseClass {
 	@Test(groups = "system", retryAnalyzer = com.hrm.genericutils.RetryImplementationClass.class)
 	public void tc_01_test() throws IOException {
-		// From Hope page, go to Corporate Page
+		// Read common data from Properties file
+		String url = puObj.readDataFromPropertiesFile("url");
+		String userEmail = puObj.readDataFromPropertiesFile("userEmail");
+		String password = puObj.readDataFromPropertiesFile("password");
+		// Trigger the URL
+		driver.get(url);
+		// Login to the Application
+		LoginPage lp = new LoginPage(driver);
+		lp.hrHeadLogin(userEmail, password);
+		// Print the Alert pop message and Accept the Alert
+		wuObj.printAlertMessageAndAcceptAlert(driver);
 		HomePage hp = new HomePage(driver);
+		hp.verifyUser(userEmail);
+		// From Hope page, go to Corporate Page
 		hp.navigateToAddCorporate();
-		Assert.fail();
 		CorporatePage cp = new CorporatePage(driver);
 		// Add Corporate to the application
 		cp.getAddCorporateButton().click();
@@ -82,7 +95,6 @@ public class AddEmployee_TC_01_test extends BaseClass {
 		// Login to Application as HR Officer (Newly created HR Officer Admin)
 		String hrOfficerUserEmail = euObj.readExcelData("TC_01", 7, 10);
 		String hrOfficerPasswors = euObj.readExcelData("TC_01", 8, 10);
-		LoginPage lp = new LoginPage(driver);
 		lp.hrOfficerLogin(hrOfficerUserEmail, hrOfficerPasswors);
 		// Verify the Alert message using Assert and Accept the Alert
 		expectedPopupMessage = euObj.readExcelData("TC_01", 2, 19);

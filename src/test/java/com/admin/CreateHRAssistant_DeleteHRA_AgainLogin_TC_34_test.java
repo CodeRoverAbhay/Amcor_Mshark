@@ -2,55 +2,34 @@ package com.admin;
 
 import java.io.IOException;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import com.hrm.genericutils.ExcelUtils;
-import com.hrm.genericutils.PropertyFileUtils;
-import com.hrm.genericutils.WebDriverUtils;
+import com.hrm.genericutils.BaseClass;
 import com.hrm.objectRepo.AddAdminPage;
 import com.hrm.objectRepo.AdminPage;
 import com.hrm.objectRepo.DeleteAdminPage;
 import com.hrm.objectRepo.HomePage;
 import com.hrm.objectRepo.LoginPage;
 
+@Listeners(com.hrm.genericutils.ListenerImplementationClass.class)
+
 //E2E [ Create HR Assistant and check for login and log out of new HR Assistant, then delete that New HR Assistant and try to login it ]
-public class CreateHRAssistant_DeleteHRA_AgainLogin_TC_34_test {
-	public static WebDriver driver;
+
+public class CreateHRAssistant_DeleteHRA_AgainLogin_TC_34_test extends BaseClass{
 	
-	@Parameters("browser")
-	@Test(groups = "system")
+	//@Parameters("browser")
+	@Test(groups = "system", retryAnalyzer = com.hrm.genericutils.RetryImplementationClass.class)
 	public void tc_34_test() throws IOException {
 		// For cross browser
 		//public void tc_34_test(String browser) throws IOException {
 		
-		// Instantiate utility specific class object
-		ExcelUtils euObj = new ExcelUtils();
-		PropertyFileUtils puObj = new PropertyFileUtils();
-		WebDriverUtils wuObj = new WebDriverUtils();
-		// Read common data from the Properties file
-		String browser = puObj.readDataFromPropertiesFile("browser");
+		// Retrieve common data from Properties file or Excel for Login
 		String url = puObj.readDataFromPropertiesFile("url");
 		String userEmail = puObj.readDataFromPropertiesFile("userEmail");
 		String password = puObj.readDataFromPropertiesFile("password");
-		// Based on matched condition launch the Browser
-		if (browser.equals("chrome")) {
-			driver = new ChromeDriver();
-		} else if (browser.equals("edge")) {
-			driver = new EdgeDriver();
-		} else if (browser.equals("firefox")) {
-			driver = new FirefoxDriver();
-		}
-		// Maximize the Browser screen
-		wuObj.maximizeBrowser(driver);
 		// Trigger the URL
 		driver.get(url);
-		// Add implicit wait for WebElements
-		wuObj.waitForAllElementsToLoad(driver);
 		// Login to Application as HR Head
 		LoginPage lp = new LoginPage(driver);
 		lp.hrHeadLogin(userEmail, password);
@@ -134,9 +113,12 @@ public class CreateHRAssistant_DeleteHRA_AgainLogin_TC_34_test {
 		// Verify the Alert message and Accept the Alert
 		expectedPopupMessage = euObj.readExcelData("TC_34", 4, 7);
 		wuObj.acceptAlertWithAssert(driver, expectedPopupMessage);
-		// Minimize the Browser screen
-		wuObj.minimizeBrowser(driver);
-		// Terminate the session
-		driver.quit();
+		// Read common data from Properties file
+		userEmail = puObj.readDataFromPropertiesFile("userEmail");
+		password = puObj.readDataFromPropertiesFile("password");
+		// Login to the Application
+		lp.hrHeadLogin(userEmail, password);
+		// Print the Alert pop message and Accept the Alert
+		wuObj.printAlertMessageAndAcceptAlert(driver);
 	}
 }

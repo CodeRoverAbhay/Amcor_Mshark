@@ -12,12 +12,12 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 
 import com.hrm.objectRepo.HomePage;
-import com.hrm.objectRepo.LoginPage;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass {
 	// Instantiate utility specific class objects
@@ -42,6 +42,7 @@ public class BaseClass {
 	
 	@BeforeClass(alwaysRun = true)
 	public void config_BC() throws IOException {
+		WebDriverManager.chromedriver().setup();
 		String browser = puObj.readDataFromPropertiesFile("browser");
 		// Useful for compatability testing
 		if (browser.equalsIgnoreCase("chrome")) {
@@ -61,22 +62,22 @@ public class BaseClass {
 		wuObj.waitForAllElementsToLoad(driver);
 	}
 
-	@BeforeMethod(alwaysRun = true)
-	public void config_BM() throws IOException {
-		// Read common data from Properties file
-		String url = puObj.readDataFromPropertiesFile("url");
-		String userEmail = puObj.readDataFromPropertiesFile("userEmail");
-		String password = puObj.readDataFromPropertiesFile("password");
-		// Trigger the URL
-		driver.get(url);
-		// Login to the Application
-		LoginPage lp = new LoginPage(driver);
-		lp.hrHeadLogin(userEmail, password);
-		// Print the Alert pop message and Accept the Alert
-		wuObj.printAlertMessageAndAcceptAlert(driver);
-		HomePage hp = new HomePage(driver);
-		hp.verifyUser(userEmail);
-	}
+//	@BeforeMethod(alwaysRun = true)
+//	public void config_BM() throws IOException {
+//		// Read common data from Properties file
+//		String url = puObj.readDataFromPropertiesFile("url");
+//		String userEmail = puObj.readDataFromPropertiesFile("userEmail");
+//		String password = puObj.readDataFromPropertiesFile("password");
+//		// Trigger the URL
+//		driver.get(url);
+//		// Login to the Application
+//		LoginPage lp = new LoginPage(driver);
+//		lp.hrHeadLogin(userEmail, password);
+//		// Print the Alert pop message and Accept the Alert
+//		wuObj.printAlertMessageAndAcceptAlert(driver);
+//		HomePage hp = new HomePage(driver);
+//		hp.verifyUser(userEmail);
+//	}
 
 	@AfterMethod(alwaysRun = true)
 	public void config_AM() {
