@@ -15,12 +15,8 @@ import com.hrm.objectRepo.LoginPage;
 
 public class HrOfficerLogin_TC_02_test extends BaseClass{
 	
-	//@Parameters("browser")
 	@Test(groups = "smoke", retryAnalyzer = com.hrm.genericutils.RetryImplementationClass.class)
 	public void tc_02_test() throws IOException {
-		// For cross browser
-		//public void tc_02_test(String browser) throws IOException {
-		
 		// Retrieve common data from Properties file or Excel for Login
 		String url = puObj.readDataFromPropertiesFile("url");
 		String hrOfficerUserEmail = euObj.readExcelData("TC_02", 2, 1);

@@ -164,7 +164,7 @@
 		</profile>
 
 	<profile>
-			<id></id>
+			<id>crossBrowserChromeFirefox</id>
 			<build>
 				<pluginManagement>
 					<plugins>
@@ -184,7 +184,7 @@
 		</profile>
 
 	<profile>
-			<id>_</id>
+			<id>parallelSuite</id>
 			<build>
 				<pluginManagement>
 					<plugins>

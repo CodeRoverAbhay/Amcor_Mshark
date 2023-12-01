@@ -18,12 +18,8 @@ import com.hrm.objectRepo.LoginPage;
 
 public class DeleteEmployee_FromHRO_Check_Employee_KPI_TC_09_test extends BaseClass{
 	
-	//@Parameters("browser")
 	@Test (groups = "integration", retryAnalyzer = com.hrm.genericutils.RetryImplementationClass.class)
 	public void tc_09_test() throws EncryptedDocumentException, IOException {
-		// For cross browser
-		//public void tc_09_test(String browser) throws EncryptedDocumentException, IOException {
-		
 		// Retrieve common data from Properties file
 		String url = puObj.readDataFromPropertiesFile("url");
 		// Trigger the URL

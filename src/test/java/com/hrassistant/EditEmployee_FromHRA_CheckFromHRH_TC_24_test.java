@@ -18,12 +18,8 @@ import com.hrm.objectRepo.LoginPage;
 
 public class EditEmployee_FromHRA_CheckFromHRH_TC_24_test extends BaseClass{
 	
-	//@Parameters("browser")
 	@Test(groups = "integration", retryAnalyzer = com.hrm.genericutils.RetryImplementationClass.class)
 	public void tc_24_test() throws IOException {
-		// For cross browser
-		//public void tc_24_test(String browser) throws IOException {
-		
 		// Retrieve common data from the Properties file
 		String url = puObj.readDataFromPropertiesFile("url");
 		// Trigger the URL

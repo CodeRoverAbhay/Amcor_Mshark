@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite thread-count="2" parallel="classes" name="cross-browser">
+<suite thread-count="2" parallel="tests" name="cross-browser">
   <test name="Test-Runner=1">
     <parameter name="browser" value="chrome"/>
     <classes>
@@ -18,10 +18,10 @@
     <classes>
       <class name="com.admin.AddEmployee_TC_01_test"/>
       <class name="com.hrofficer.HrOfficerLogin_TC_02_test"/>
-      <class name="com.admin.AddEmployeeHRH_Count_Employee_KPI_FromHRO_TC_54_test"/>
+      <class name="com.admin.AddEmployeeHRH_Check_Employee_FromHRO_TC_54_test"/>
       <class name="com.hrofficer.DeleteEmployee_FromHRO_Check_Employee_KPI_TC_09_test"/>
       <class name="com.hrassistant.EditEmployee_FromHRA_CheckFromHRH_TC_24_test"/>
-      <class name="com.admin.CreateHRHead_DowngradeTo_HROfficer_AddEmployee_TC_31"/>
+      <class name="com.admin.CreateHRHead_DowngradeTo_HROfficer_AddEmployee_TC_31_test"/>
       <class name="com.admin.CreateHRAssistant_DeleteHRA_AgainLogin_TC_34_test"/>
     </classes>
   </test> <!-- Test -->

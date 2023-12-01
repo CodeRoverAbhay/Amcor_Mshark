@@ -18,12 +18,8 @@ import com.hrm.objectRepo.LoginPage;
 
 public class CreateHRAssistant_DeleteHRA_AgainLogin_TC_34_test extends BaseClass{
 	
-	//@Parameters("browser")
 	@Test(groups = "system", retryAnalyzer = com.hrm.genericutils.RetryImplementationClass.class)
 	public void tc_34_test() throws IOException {
-		// For cross browser
-		//public void tc_34_test(String browser) throws IOException {
-		
 		// Retrieve common data from Properties file or Excel for Login
 		String url = puObj.readDataFromPropertiesFile("url");
 		String userEmail = puObj.readDataFromPropertiesFile("userEmail");

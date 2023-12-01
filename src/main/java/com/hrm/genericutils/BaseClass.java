@@ -14,6 +14,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 
 import com.hrm.objectRepo.HomePage;
 
@@ -40,16 +41,40 @@ public class BaseClass {
 		System.out.println("Executing Before Test");
 	}
 	
+//	@BeforeClass(alwaysRun = true)
+//	public void config_BC() throws IOException {
+//		WebDriverManager.chromedriver().setup();
+//		String browser = puObj.readDataFromPropertiesFile("browser");
+//		if (browser.equalsIgnoreCase("chrome")) {
+//			driver = new ChromeDriver();
+//		} else if (browser.equalsIgnoreCase("edge")) {
+//			driver = new EdgeDriver();
+//		} else if (browser.equalsIgnoreCase("firefox")) {
+//			driver = new FirefoxDriver();
+//		} else {
+//			System.err.println("Invalid Browser");
+//		}
+//		// Initializing the static ssDriver value which is of WebDriver type for screen shot
+//		ssDriver = driver;
+//		// Maximize the Browser screen
+//		wuObj.maximizeBrowser(driver);
+//		// Wait for all WebElements to get loaded
+//		wuObj.waitForAllElementsToLoad(driver);
+//	}
+	
+	// For Cross - browser suite
+	@Parameters ("browser")
 	@BeforeClass(alwaysRun = true)
-	public void config_BC() throws IOException {
-		WebDriverManager.chromedriver().setup();
-		String browser = puObj.readDataFromPropertiesFile("browser");
+	public void config_BC(String browser) throws IOException {
 		// Useful for compatability testing
 		if (browser.equalsIgnoreCase("chrome")) {
+			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 		} else if (browser.equalsIgnoreCase("edge")) {
+			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
 		} else if (browser.equalsIgnoreCase("firefox")) {
+			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 		} else {
 			System.err.println("Invalid Browser");
