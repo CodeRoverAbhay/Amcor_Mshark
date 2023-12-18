@@ -28,7 +28,7 @@ public class DataProviderTest {
 		System.out.println("Joining Date is : " + fromDate + " Recent Date is : " + recentDate);
 	}
 
-	@Test(dataProviderClass = DataProviderExcelTest.class, dataProvider = "excelData")
+	@Test(dataProviderClass = com.testng.DataProviderExcelTest.class, dataProvider = "excelData")
 	public void getDataFromExcel(String key, String value) {
 		System.out.println("Key is : " + key + ", Value is : " + value);
 	}

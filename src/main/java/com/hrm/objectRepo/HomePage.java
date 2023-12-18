@@ -16,70 +16,70 @@ public class HomePage {
 	}
 
 	@FindBy(xpath = "//p[text()='Dashboard']")
-	WebElement dashBoardTab;
+	private WebElement dashBoardTab;
 
 	public WebElement getDashBoardTab() {
 		return dashBoardTab;
 	}
 
 	@FindBy(xpath = "//p[normalize-space(text())='CORPORATE']")
-	WebElement corporateTab;
+	private WebElement corporateTab;
 
 	public WebElement getCorporateTab() {
 		return corporateTab;
 	}
 
 	@FindBy(xpath = "//p[normalize-space(text())='Add Corporate']")
-	WebElement addCorporateOption;
+	private WebElement addCorporateOption;
 
 	public WebElement getAddCorporateOption() {
 		return addCorporateOption;
 	}
 
 	@FindBy(xpath = "//p[normalize-space(text())='BRANCHES']")
-	WebElement branchTab;
+	private WebElement branchTab;
 
 	public WebElement getBranchTab() {
 		return branchTab;
 	}
 
 	@FindBy(xpath = "//p[normalize-space(text())='Add Braches']")
-	WebElement addBranchesOption;
+	private WebElement addBranchesOption;
 
 	public WebElement getAddBranchesOption() {
 		return addBranchesOption;
 	}
 
 	@FindBy(xpath = "//p[normalize-space(text())='EMPLOYEE']")
-	WebElement employeeTab;
+	private WebElement employeeTab;
 
 	public WebElement getEmployeeTab() {
 		return employeeTab;
 	}
 
 	@FindBy(xpath = "//p[normalize-space(text())='Add Employee']")
-	WebElement addEmployeeOption;
+	private WebElement addEmployeeOption;
 
 	public WebElement getAddEmployeeOption() {
 		return addEmployeeOption;
 	}
 
 	@FindBy(xpath = "//p[normalize-space(text())='ADMIN']")
-	WebElement adminTab;
+	private WebElement adminTab;
 
 	public WebElement getAdminTab() {
 		return adminTab;
 	}
 
 	@FindBy(xpath = "//p[normalize-space(text())='Add Admin']")
-	WebElement addAdminOption;
+	private WebElement addAdminOption;
 
 	public WebElement getAddAdminOption() {
 		return addAdminOption;
 	}
 
 	@FindBy(xpath = "//span[.='Employee']/following-sibling::span")
-	WebElement dashBoardEmployeeCount;
+	private WebElement dashBoardEmployeeCount;
 
 	/**
 	 * This Business Logic is to retriev the current count of Employee registered in the application
@@ -106,7 +106,7 @@ public class HomePage {
 
 
 	@FindBy(xpath = "//span[.='Corporate']/following-sibling::span")
-	WebElement dashboardCorporateCount;
+	private WebElement dashboardCorporateCount;
 
 	/**
 	 * This Business Logic is to retriev the current count of Corporate registered in the application
@@ -120,7 +120,7 @@ public class HomePage {
 	}
 
 	@FindBy(xpath = "//span[.='Braches']/following-sibling::span")
-	WebElement dashboardBranchesCount;
+	private WebElement dashboardBranchesCount;
 
 	/**
 	 * This Business Logic is to retriev the current count of Branches registered in the application
@@ -134,7 +134,7 @@ public class HomePage {
 	}
 
 	@FindBy(xpath = "//span[.='Admin Account']/following-sibling::span")
-	WebElement dashboardAdminAccountCount;
+	private WebElement dashboardAdminAccountCount;
 
 	/**
 	 * This Business Logic is to retriev the current count of Admin registered in the application
@@ -148,7 +148,7 @@ public class HomePage {
 	}
 	
 	@FindBy(className = "d-block")
-	WebElement currentUserEmailId;
+	private WebElement currentUserEmailId;
 
 	/**
 	 * This Business Logic is to retriev the email address of the user who has sign-in to the application
@@ -171,14 +171,14 @@ public class HomePage {
 	}
 
 	@FindBy(xpath = "//i[@class='fa fa-user']/..")
-	WebElement userProfileIcon;
+	private WebElement userProfileIcon;
 
 	public WebElement getUserProfileIcon() {
 		return userProfileIcon;
 	}
 
 	@FindBy(xpath = "//i[@class='fa fa-power-off']")
-	WebElement logOutLink;
+	private WebElement logOutLink;
 
 	public WebElement getLogOutLink() {
 		return logOutLink;

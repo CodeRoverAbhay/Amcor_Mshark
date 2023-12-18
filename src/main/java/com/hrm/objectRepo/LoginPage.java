@@ -16,28 +16,28 @@ public class LoginPage extends WebDriverUtils {
 	}
 
 	@FindBy(name = "hr_email")
-	WebElement hrEmailTextfield;
+	private WebElement hrEmailTextfield;
 
 	public WebElement getHrEmailTextfield() {
 		return hrEmailTextfield;
 	}
 
 	@FindBy(name = "hr_password")
-	WebElement hrPasswordTextfield;
+	private WebElement hrPasswordTextfield;
 
 	public WebElement getHrPasswordTextfield() {
 		return hrPasswordTextfield;
 	}
 
 	@FindBy(name = "hr_type")
-	WebElement hrTypeDropdown;
+	private WebElement hrTypeDropdown;
 
 	public WebElement getHrTypeDropdown() {
 		return hrTypeDropdown;
 	}
 
 	@FindBy(xpath = "//option[@value='HR Head']")
-	WebElement hrHeadDropdownOption;
+	private WebElement hrHeadDropdownOption;
 
 	/**
 	 * This Business Logic is to retrieve the value of HR Head option
@@ -50,7 +50,7 @@ public class LoginPage extends WebDriverUtils {
 	}
 
 	@FindBy(xpath = "//option[@value='HR Officer']")
-	WebElement hrOfficerDropdownOption;
+	private WebElement hrOfficerDropdownOption;
 
 	/**
 	 * This Business Logic is to retrieve the value of HR Officer option
@@ -63,7 +63,7 @@ public class LoginPage extends WebDriverUtils {
 	}
 
 	@FindBy(xpath = "//option[@value='HR Assistant']")
-	WebElement hrAssistantDropdownOption;
+	private WebElement hrAssistantDropdownOption;
 
 	/**
 	 * This Business Logic is to retrieve the value of HR Assistant option
@@ -76,7 +76,7 @@ public class LoginPage extends WebDriverUtils {
 	}
 
 	@FindBy(name = "login_hr")
-	WebElement signInButton;
+	private WebElement signInButton;
 
 	public WebElement getSignInButton() {
 		return signInButton;

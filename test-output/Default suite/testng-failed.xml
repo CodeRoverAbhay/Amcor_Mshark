@@ -3,18 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.hrassistant.EditEmployee_FromHRA_CheckFromHRH_TC_24_test">
+      <class name="com.practice.sillySillyMam.FluentWaitPractice">
         <methods>
-          <include name="tc_24_test"/>
-          <include name="config_AT"/>
-          <include name="config_AM"/>
-          <include name="config_AS"/>
-          <include name="config_BT"/>
-          <include name="config_AC"/>
-          <include name="config_BS"/>
-          <include name="config_BC"/>
+          <include name="fluentWaitTest"/>
         </methods>
-      </class> <!-- com.hrassistant.EditEmployee_FromHRA_CheckFromHRH_TC_24_test -->
+      </class> <!-- com.practice.sillySillyMam.FluentWaitPractice -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

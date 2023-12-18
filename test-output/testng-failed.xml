@@ -1,20 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite thread-count="2" parallel="classes" name="Failed suite [parallel]" guice-stage="DEVELOPMENT">
-  <test thread-count="2" parallel="classes" name="Test-Runner=2(failed)">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.hrofficer.HrOfficerLogin_TC_02_test">
+      <class name="com.practice.sillySillyMam.FluentWaitPractice">
         <methods>
-          <include name="config_AT"/>
-          <include name="tc_02_test"/>
-          <include name="config_AM"/>
-          <include name="config_AS"/>
-          <include name="config_BT"/>
-          <include name="config_AC"/>
-          <include name="config_BS"/>
-          <include name="config_BC"/>
+          <include name="fluentWaitTest"/>
         </methods>
-      </class> <!-- com.hrofficer.HrOfficerLogin_TC_02_test -->
+      </class> <!-- com.practice.sillySillyMam.FluentWaitPractice -->
     </classes>
-  </test> <!-- Test-Runner=2(failed) -->
-</suite> <!-- Failed suite [parallel] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

@@ -25,34 +25,35 @@ public class ListenerImplementationClass implements ITestListener {
 		htmlReport.config().setDocumentTitle("HRM");
 		htmlReport.config().setTheme(Theme.DARK);
 		htmlReport.config().setReportName("Mshark Test Result");
-		htmlReport.config().setReportName("Code Rover Abhay");
 		// Initializes the ExtentReports instance
 		report = new ExtentReports();
 		// Attach thr report else it will not at all add any thing to the report
 		report.attachReporter(htmlReport);
 		report.setSystemInfo("Base-Browser", "chrome");
+		report.setSystemInfo("Base-OS", "Windows");
 		report.setSystemInfo("url", "http://rmgtestingserver/domain/HRM_System/");
+		report.setSystemInfo("Reporter Name", "Code Rover Abhay");
 	}
 	
 	@Override
 	public void onTestStart(ITestResult result) {
-		String methodName = result.getMethod().getMethodName();
-		test = report.createTest(methodName);
+		String testMethodName = result.getMethod().getMethodName();
+		test = report.createTest(testMethodName);
 		Reporter.log("[ Test script execution starts from here. ]");
 	}
 
 	@Override
 	public void onTestSuccess(ITestResult result) {
-		String methodName = result.getMethod().getMethodName();
-		test.log(Status.PASS, methodName + " PASSED");
-		Reporter.log(methodName + " [ Test script executed successfully. ]");
+		String testMethodName = result.getMethod().getMethodName();
+		test.log(Status.PASS, testMethodName + " PASSED");
+		Reporter.log(testMethodName + " [ Test script executed successfully. ]");
 	}
 
 	@Override
 	public void onTestFailure(ITestResult result) {
 		String timeStamp = LocalDateTime.now().toString().replace(':', '-');
-		String methodName = result.getMethod().getMethodName();
-		String failedTestName = methodName + "_" + timeStamp;
+		String testMethodName = result.getMethod().getMethodName();
+		String failedTestName = testMethodName + "_" + timeStamp;
 		try {
 			String screenshotPath = WebDriverUtils.getScreenShot(BaseClass.ssDriver, failedTestName);
 			test.addScreenCaptureFromPath(screenshotPath);
@@ -60,25 +61,17 @@ public class ListenerImplementationClass implements ITestListener {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		test.log(Status.FAIL, methodName + " FAILED");
+		test.log(Status.FAIL, testMethodName + " FAILED");
 		test.log(Status.FAIL, result.getThrowable());
-		Reporter.log(methodName + " [ Test script execution got failed. ]");
+		Reporter.log(testMethodName + " [ Test script execution got failed. ]");
 	}
 
 	@Override
 	public void onTestSkipped(ITestResult result) {
-		String methodName = result.getMethod().getMethodName();
-		test.log(Status.SKIP, methodName + " SKIPPED");
+		String testMethodName = result.getMethod().getMethodName();
+		test.log(Status.SKIP, testMethodName + " SKIPPED");
 		test.log(Status.SKIP, result.getThrowable());
-		Reporter.log(methodName + " [ Test script execution got skipped. ]");
-	}
-
-	@Override
-	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
-	}
-
-	@Override
-	public void onTestFailedWithTimeout(ITestResult result) {
+		Reporter.log(testMethodName + " [ Test script execution got skipped. ]");
 	}
 
 	@Override

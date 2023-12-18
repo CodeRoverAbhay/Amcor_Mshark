@@ -261,11 +261,11 @@ public class WebDriverUtils {
 		// STEP 1: Use getWindowHandles to capture all the Window ID
 		Set<String> windows = driver.getWindowHandles();
 		// STEP 2: Iterate through the windows
-		Iterator<String> it = windows.iterator();
+		Iterator<String> itr = windows.iterator();
 		// STEP 3: Check whether there is next window or not
-		while (it.hasNext()) {
+		while (itr.hasNext()) {
 			// STEP4: Capture the current Window ID
-			String windowId = it.next();
+			String windowId = itr.next();
 			// STEP5: Switch to current window and capture the title
 			String currentWindowTitle = driver.switchTo().window(windowId).getTitle();
 			// STEP 6: Check whether the current window title is matching with expected window title
