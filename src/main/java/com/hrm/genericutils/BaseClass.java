@@ -45,7 +45,7 @@ public class BaseClass {
 	public void config_BC() throws IOException {
 		String browser = puObj.readDataFromPropertiesFile("browser");
 		if (browser.equalsIgnoreCase("chrome")) {
-			WebDriverManager.chromiumdriver().setup();
+			//WebDriverManager.chromiumdriver().setup();
 			driver = new ChromeDriver();
 			System.out.println("Successfully launched Chrome Browser.");
 		} else if (browser.equalsIgnoreCase("edge")) {

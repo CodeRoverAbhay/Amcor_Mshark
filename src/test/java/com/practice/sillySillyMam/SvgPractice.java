@@ -16,4 +16,19 @@ public class SvgPractice {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.findElement(By.linkText("Got it!")).click();
 	}
+	
+	@Test
+	public void worldOMetersDynamicData () {
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://www.worldometers.info/");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		String totalBirthCount = driver.findElement(By.xpath("//span[@rel='births_this_year']")).getText();
+		System.out.println("Total birth count in string : " + totalBirthCount);
+		String countWithoutComma = totalBirthCount.replace(",", "");
+		int totalBirthCountInInt = Integer.parseInt(countWithoutComma);
+		System.out.println("Total birth count in integer : " + totalBirthCountInInt);
+		driver.manage().window().minimize();
+		driver.quit();
+	}
 }

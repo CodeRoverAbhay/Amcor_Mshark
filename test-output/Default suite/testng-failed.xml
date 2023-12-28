@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.practice.sillySillyMam.FluentWaitPractice">
+      <class name="com.practice.sillySillyMam.SvgPractice">
         <methods>
-          <include name="fluentWaitTest"/>
+          <include name="worldOMeters"/>
         </methods>
-      </class> <!-- com.practice.sillySillyMam.FluentWaitPractice -->
+      </class> <!-- com.practice.sillySillyMam.SvgPractice -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
